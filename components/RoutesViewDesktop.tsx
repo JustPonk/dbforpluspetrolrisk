@@ -241,32 +241,32 @@ export default function RoutesView({ residenceId, residenceName, residenceAddres
   }
 
   return (
-    <div className="h-full bg-slate-900 flex">
+    <div className="h-full bg-slate-900 flex flex-col md:flex-row">
       {/* Sidebar */}
       <motion.div
         initial={{ x: -300, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        className="w-80 bg-slate-800 border-r border-slate-700 overflow-y-auto"
+        className="w-full md:w-80 bg-slate-800 border-r border-slate-700 overflow-y-auto max-h-[40vh] md:max-h-none"
       >
-        <div className="p-6">
-          <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-            <Navigation className="w-6 h-6 text-blue-400" />
+        <div className="p-4 md:p-6">
+          <h2 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4 flex items-center gap-2">
+            <Navigation className="w-5 h-5 md:w-6 md:h-6 text-blue-400" />
             Rutas y Servicios
           </h2>
 
           {/* Service Type Selector */}
-          <div className="mb-6">
-            <label className="text-sm font-semibold text-slate-300 mb-2 block">
+          <div className="mb-4 md:mb-6">
+            <label className="text-xs md:text-sm font-semibold text-slate-300 mb-2 block">
               Tipo de Servicio:
             </label>
-            <div className="flex gap-2">
+            <div className="flex gap-1 md:gap-2">
               <button
                 onClick={() => {
                   setSelectedService('clinicas');
                   setSelectedDestination(null);
                   setRouteInfo({ distance: '', time: '' });
                 }}
-                className={`flex-1 px-3 py-2 rounded-lg text-sm font-semibold transition-all ${
+                className={`flex-1 px-2 md:px-3 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
                   selectedService === 'clinicas'
                     ? 'bg-green-600 text-white'
                     : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
@@ -280,7 +280,7 @@ export default function RoutesView({ residenceId, residenceName, residenceAddres
                   setSelectedDestination(null);
                   setRouteInfo({ distance: '', time: '' });
                 }}
-                className={`flex-1 px-3 py-2 rounded-lg text-sm font-semibold transition-all ${
+                className={`flex-1 px-2 md:px-3 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
                   selectedService === 'comisarias'
                     ? 'bg-red-600 text-white'
                     : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
@@ -294,7 +294,7 @@ export default function RoutesView({ residenceId, residenceName, residenceAddres
                   setSelectedDestination(null);
                   setRouteInfo({ distance: '', time: '' });
                 }}
-                className={`flex-1 px-3 py-2 rounded-lg text-sm font-semibold transition-all ${
+                className={`flex-1 px-2 md:px-3 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
                   selectedService === 'serenazgo'
                     ? 'bg-orange-600 text-white'
                     : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
@@ -306,11 +306,11 @@ export default function RoutesView({ residenceId, residenceName, residenceAddres
           </div>
 
           {/* Current Location */}
-          <div className="mb-6 p-4 bg-slate-700 rounded-lg">
-            <div className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
+          <div className="mb-4 md:mb-6 p-3 md:p-4 bg-slate-700 rounded-lg">
+            <div className="flex items-start gap-2 md:gap-3">
+              <MapPin className="w-4 h-4 md:w-5 md:h-5 text-blue-400 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="text-sm font-semibold text-slate-200 mb-1">
+                <h3 className="text-xs md:text-sm font-semibold text-slate-200 mb-1">
                   Ubicación Actual
                 </h3>
                 <p className="text-xs text-slate-400">
@@ -325,7 +325,7 @@ export default function RoutesView({ residenceId, residenceName, residenceAddres
 
           {/* Nearby Services */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-300 mb-3">
+            <h3 className="text-xs md:text-sm font-semibold text-slate-300 mb-2 md:mb-3">
               {getServiceLabel()} en {distrito}
             </h3>
             <div className="space-y-2">
@@ -380,12 +380,12 @@ export default function RoutesView({ residenceId, residenceName, residenceAddres
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-6 p-4 bg-blue-600 rounded-lg"
+              className="mt-4 md:mt-6 p-3 md:p-4 bg-blue-600 rounded-lg"
             >
-              <h4 className="text-sm font-semibold text-white mb-2">
+              <h4 className="text-xs md:text-sm font-semibold text-white mb-2">
                 Información de Ruta
               </h4>
-              <div className="space-y-1 text-sm text-white">
+              <div className="space-y-1 text-xs md:text-sm text-white">
                 <p>📍 Distancia: <strong>{routeInfo.distance}</strong></p>
                 <p>⏱️ Tiempo estimado: <strong>{routeInfo.time}</strong></p>
               </div>
@@ -395,11 +395,11 @@ export default function RoutesView({ residenceId, residenceName, residenceAddres
       </motion.div>
 
       {/* Map */}
-      <div className="flex-1 relative">
+      <div className="flex-1 relative min-h-[60vh] md:min-h-full">
         <div 
           ref={mapContainerRef} 
           className="w-full h-full"
-          style={{ minHeight: '500px' }}
+          style={{ minHeight: '300px' }}
         />
       </div>
     </div>
