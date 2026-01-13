@@ -76,12 +76,13 @@ export default function DashboardPage() {
 
   return (
     <div className="flex h-screen bg-slate-900">
-      {/* Sidebar - Hidden on mobile, visible on desktop */}
-      <motion.div
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: (mobileMenuOpen || isDesktop) ? 0 : -256, opacity: 1 }}
-        className="fixed md:relative w-64 h-full bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 text-white shadow-xl border-r border-slate-700 z-50"
-      >
+      {/* Sidebar - Hidden on mobile, visible on desktop, hidden when expanded view is active */}
+      {!isExpanded && (
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: (mobileMenuOpen || isDesktop) ? 0 : -256, opacity: 1 }}
+          className="fixed md:relative w-64 h-full bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 text-white shadow-xl border-r border-slate-700 z-50"
+        >
         <div className="p-4 md:p-6">
           <div className="flex justify-between items-center mb-6 md:mb-8">
             <h1 className="text-xl md:text-2xl font-bold text-blue-400">Pluspetrol</h1>
@@ -116,18 +117,22 @@ export default function DashboardPage() {
           </nav>
         </div>
       </motion.div>
+      )}
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(true)}
-          className="md:hidden fixed top-4 left-4 z-40 bg-blue-600 text-white p-2 rounded-lg shadow-lg"
-        >
-          ☰
-        </button>
+        {/* Mobile Menu Button - Hidden when expanded */}
+        {!isExpanded && (
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className="md:hidden fixed top-4 left-4 z-40 bg-blue-600 text-white p-2 rounded-lg shadow-lg"
+          >
+            ☰
+          </button>
+        )}
 
-        {/* Top Bar */}
+        {/* Top Bar - Hidden when expanded */}
+        {!isExpanded && (
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -157,6 +162,7 @@ export default function DashboardPage() {
             </div>
           </div>
         </motion.div>
+        )}
 
         {/* Content Area */}
         <div className={`flex-1 overflow-auto bg-slate-900 ${currentView === 'routes' ? '' : 'p-4 md:p-8'}`}>
