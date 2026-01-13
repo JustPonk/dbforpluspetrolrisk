@@ -169,9 +169,9 @@ export default function DashboardPage() {
           >
             {currentView === 'main' && (
               <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-12 gap-6">
+                <div className="flex flex-col lg:grid lg:grid-cols-12 gap-4 lg:gap-6">
                   {/* Tarjeta Principal */}
-                  <div className="col-span-7 bg-slate-800 rounded-xl shadow-xl border border-slate-700 p-6">
+                  <div className="lg:col-span-7 bg-slate-800 rounded-xl shadow-xl border border-slate-700 p-4 md:p-6">
                     <div className="aspect-video bg-gradient-to-br from-slate-700 to-slate-600 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
                       <img
                         src={selectedResidence.image}
@@ -187,16 +187,16 @@ export default function DashboardPage() {
                       />
                     </div>
 
-                    <h2 className="text-2xl font-bold text-blue-400 mb-2">
+                    <h2 className="text-xl md:text-2xl font-bold text-blue-400 mb-2">
                       {selectedResidence.name}
                     </h2>
 
                     <div className="flex items-center gap-2 text-slate-300 mb-3">
-                      <span className="text-sm">{selectedResidence.address}</span>
+                      <span className="text-xs md:text-sm">{selectedResidence.address}</span>
                     </div>
 
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="text-sm font-semibold text-slate-200">Nivel de Riesgo:</span>
+                      <span className="text-xs md:text-sm font-semibold text-slate-200">Nivel de Riesgo:</span>
                       <span className={`px-3 py-1 rounded-full text-xs font-bold border-2 uppercase ${getRiskColor(selectedResidence.riskLevel)}`}>
                         {selectedResidence.riskLevel}
                       </span>
@@ -222,9 +222,9 @@ export default function DashboardPage() {
                   </div>
 
                   {/* Panel de Estadísticas */}
-                  <div className="col-span-5 space-y-4">
-                    <div className="bg-slate-800 rounded-xl shadow-xl border border-slate-700 p-6">
-                      <h3 className="text-xl font-bold text-slate-100 mb-4">Evaluación de Seguridad</h3>
+                  <div className="lg:col-span-5 space-y-4">
+                    <div className="bg-slate-800 rounded-xl shadow-xl border border-slate-700 p-4 md:p-6">
+                      <h3 className="text-lg md:text-xl font-bold text-slate-100 mb-4">Evaluación de Seguridad</h3>
                       <div className="space-y-3">
                         <div>
                           <div className="flex justify-between text-sm mb-1">
