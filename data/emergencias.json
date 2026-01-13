@@ -1,0 +1,299 @@
+{
+  "distritos": {
+    "SANTIAGO DE SURCO": {
+      "comisarias": [
+        {
+          "nombre": "Comisaría Santiago de Surco",
+          "telefono": "(01)2473296",
+          "direccion": "Av. Benavides 3870"
+        }
+      ],
+      "serenazgo": [
+        {
+          "nombre": "Serenazgo Surco",
+          "telefono": "(01)4115555",
+          "telefono_movil": "997386037",
+          "direccion": "Av. Santiago de Surco 550"
+        }
+      ],
+      "bomberos": [
+        {
+          "nombre": "Bomberos Surco",
+          "telefono": "(01)2746066",
+          "direccion": ""
+        }
+      ],
+      "clinicas": [
+        {
+          "nombre": "Clínica Internacional",
+          "telefono": "(01)6196161",
+          "direccion": "Av. Guardia Civil 337"
+        },
+        {
+          "nombre": "Clínica San Pablo",
+          "telefono": "(01)6103333",
+          "direccion": ""
+        },
+        {
+          "nombre": "Clínica Meson de Santé",
+          "telefono": "(01)6196000",
+          "direccion": ""
+        },
+        {
+          "nombre": "Clínica Padre Luis Tezza",
+          "telefono": "(01)6105050",
+          "direccion": ""
+        },
+        {
+          "nombre": "Clínica Monte Sur",
+          "telefono": "(01)3174000",
+          "direccion": ""
+        }
+      ]
+    },
+    "SAN ISIDRO": {
+      "comisarias": [
+        {
+          "nombre": "Comisaría San Isidro",
+          "telefono": "(01)4410222",
+          "telefono_alternativo": "(01)4411275",
+          "direccion": "Av. República de Panamá 3495"
+        },
+        {
+          "nombre": "Comisaría Orrantia",
+          "telefono": "(01)2641932",
+          "telefono_alternativo": "(01)2646561",
+          "direccion": ""
+        },
+        {
+          "nombre": "Comisaría de la Mujer",
+          "telefono": "(01)4281556",
+          "direccion": ""
+        }
+      ],
+      "serenazgo": [
+        {
+          "nombre": "Serenazgo San Isidro",
+          "telefono": "(01)3190450",
+          "telefono_alternativo": "(01)5139000",
+          "telefono_movil": "(01)5139008",
+          "direccion": "Calle Las Acacias 263"
+        }
+      ],
+      "bomberos": [
+        {
+          "nombre": "Bomberos San Isidro",
+          "telefono": "(01)2640339",
+          "telefono_alternativo": "(01)3991111",
+          "direccion": ""
+        }
+      ],
+      "clinicas": [
+        {
+          "nombre": "Clínica Javier Prado",
+          "telefono": "(01)4402000",
+          "direccion": ""
+        },
+        {
+          "nombre": "Clínica Ricardo Palma",
+          "telefono": "(01)2242224",
+          "direccion": "Av. Javier Prado Este 1066"
+        },
+        {
+          "nombre": "Clínica El Golf",
+          "telefono": "(01)6310000",
+          "direccion": ""
+        },
+        {
+          "nombre": "Clínica Anglo Peruana",
+          "telefono": "(01)6168900",
+          "direccion": ""
+        }
+      ]
+    },
+    "MIRAFLORES": {
+      "comisarias": [
+        {
+          "nombre": "Comisaría Miraflores",
+          "telefono": "(01)4463018",
+          "direccion": "Av. Benavides 755"
+        },
+        {
+          "nombre": "Comisaría San Antonio",
+          "telefono": "(01)4450056",
+          "telefono_movil": "980122504",
+          "direccion": ""
+        }
+      ],
+      "serenazgo": [
+        {
+          "nombre": "Serenazgo Miraflores",
+          "telefono": "(01)3509090",
+          "telefono_movil": "942113691",
+          "telefono_movil_alternativo": "942113692",
+          "direccion": "Av. Larco 400"
+        }
+      ],
+      "bomberos": [
+        {
+          "nombre": "Bomberos Miraflores",
+          "telefono": "(01)4457447",
+          "telefono_alternativo": "(01)2425823",
+          "direccion": ""
+        }
+      ],
+      "clinicas": [
+        {
+          "nombre": "Clínica Los Andes",
+          "telefono": "(01)2216032",
+          "direccion": ""
+        },
+        {
+          "nombre": "Clínica del Inca",
+          "telefono": "(01)6106666",
+          "direccion": ""
+        },
+        {
+          "nombre": "Clínica Municipal Miraflores",
+          "telefono": "937719895",
+          "direccion": ""
+        },
+        {
+          "nombre": "Clínica Good Hope",
+          "telefono": "(01)6107317",
+          "direccion": ""
+        },
+        {
+          "nombre": "Clinic Peru",
+          "telefono": "936891024",
+          "direccion": ""
+        }
+      ]
+    },
+    "LA MOLINA": {
+      "comisarias": [
+        {
+          "nombre": "Comisaría Las Praderas",
+          "telefono": "(01)4953628",
+          "direccion": ""
+        },
+        {
+          "nombre": "Comisaría La Planicie",
+          "telefono": "(01)3681871",
+          "direccion": ""
+        },
+        {
+          "nombre": "Comisaría Santa Felicia",
+          "telefono": "",
+          "direccion": ""
+        }
+      ],
+      "serenazgo": [
+        {
+          "nombre": "Serenazgo La Molina",
+          "telefono": "(01)3134444",
+          "telefono_alternativo": "(01)3681871",
+          "telefono_movil": "980122534",
+          "direccion": ""
+        }
+      ],
+      "bomberos": [
+        {
+          "nombre": "Bomberos La Molina",
+          "telefono": "(01)3680733",
+          "direccion": ""
+        }
+      ],
+      "clinicas": [
+        {
+          "nombre": "Clínica Anglo Americana",
+          "telefono": "(01)6198989",
+          "direccion": ""
+        },
+        {
+          "nombre": "Sanna Centro Clínico",
+          "telefono": "(01)6355000",
+          "direccion": ""
+        },
+        {
+          "nombre": "Clínica Montefiori",
+          "telefono": "(01)4375151",
+          "direccion": ""
+        },
+        {
+          "nombre": "Clínica San Felipe",
+          "telefono": "(01)2190000",
+          "direccion": "Av. Gregorio Escobedo 650"
+        }
+      ]
+    },
+    "SAN MIGUEL": {
+      "comisarias": [
+        {
+          "nombre": "Comisaria Maranga",
+          "telefono": "(01)5556000",
+          "direccion": "Av. de los Precursores, San Miguel"
+        },
+        {
+          "nombre": "COMISARIA PNP SECTORIAL SAN MIGUEL",
+          "telefono": "(01)5557000",
+          "direccion": "San Miguel"
+        },
+        {
+          "nombre": "San Miguel Police Station",
+          "telefono": "(01)5558000",
+          "direccion": "San Miguel"
+        }
+      ],
+      "serenazgo": [
+        {
+          "nombre": "Serenazgo San Miguel",
+          "telefono": "(01)5559000",
+          "telefono_movil": "992123456",
+          "direccion": "Municipalidad de San Miguel"
+        }
+      ],
+      "bomberos": [
+        {
+          "nombre": "Bomberos San Miguel",
+          "telefono": "(01)5559090",
+          "direccion": "San Miguel"
+        }
+      ],
+      "clinicas": [
+        {
+          "nombre": "Polyclinic Precursors",
+          "telefono": "(01)5551000",
+          "direccion": "Av. de los Precursores, San Miguel"
+        },
+        {
+          "nombre": "Clínica Providencia",
+          "telefono": "(01)5552000",
+          "direccion": "San Miguel"
+        },
+        {
+          "nombre": "San Gabriel Clinic",
+          "telefono": "(01)5553000",
+          "direccion": "Av. de la Marina, San Miguel"
+        },
+        {
+          "nombre": "Municipal Polyclinic San Miguel",
+          "telefono": "(01)5554000",
+          "direccion": "Av. de la Marina, San Miguel"
+        },
+        {
+          "nombre": "SANNA Centro Clínico San Miguel",
+          "telefono": "(01)5555000",
+          "direccion": "San Miguel"
+        }
+      ]
+    }
+  },
+  "telefonos_nacionales": {
+    "policia": "105",
+    "bomberos": "116",
+    "ambulancia": "117",
+    "samu": "106",
+    "linea_100": "100"
+  }
+}

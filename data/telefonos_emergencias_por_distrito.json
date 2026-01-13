@@ -1,0 +1,657 @@
+{
+  "ATE": {
+    "comisarias": [
+      "ATE VITARTE            958879879",
+      "SALAMANCA ATE   014351837",
+      "SANATA CLARA       989209329"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)4177575",
+      "(01)4941210",
+      "(01)4942222"
+    ],
+    "bomberos": [
+      "(01)2220222"
+    ],
+    "clinicas": [
+      "POLICLINICO SAN PABLO - (01)3605646",
+      "CLINICA MUNICIPAL DE ATE - 989655505",
+      "- 980090256",
+      "CLINICA MISION SALUD - (01)84523164"
+    ]
+  },
+  "BARRANCO": {
+    "comisarias": [
+      "935238088",
+      "(01)4771002"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)7192055",
+      "(01)7192219",
+      "(01)5830022",
+      "989463544"
+    ],
+    "bomberos": [
+      "(01)2473031"
+    ],
+    "clinicas": [
+      "MAISON DE SANTE - (01)6196000",
+      "POLICLINICO DE BARRANCO - (01)7192040",
+      "-",
+      "-"
+    ]
+  },
+  "BREÑA": {
+    "comisarias": [
+      "(01)4311425",
+      "(01)4244263"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)4232111",
+      "(01)2728843",
+      "938954472"
+    ],
+    "bomberos": [
+      "(01)4231100"
+    ],
+    "clinicas": [
+      "SAN MARCOS - (01)3302328",
+      "DAFI SALUD - (01)3303241",
+      "POLICLINICO BRASIL - 934906048"
+    ]
+  },
+  "CARABAYLLO": {
+    "comisarias": [
+      "959030998",
+      "(01)77777778",
+      "(01)5472427"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "910814907",
+      "(01)7170500"
+    ],
+    "bomberos": [
+      "(01)5440566"
+    ],
+    "clinicas": [
+      "-",
+      "-",
+      "-",
+      "-"
+    ]
+  },
+  "CHACLACAYO": {
+    "comisarias": [
+      "(01)3581299"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)4971033"
+    ],
+    "bomberos": [
+      "(01)3583234"
+    ],
+    "clinicas": [
+      "-",
+      "-",
+      "-",
+      "-"
+    ]
+  },
+  "CHORRILLOS": {
+    "comisarias": [
+      "Chorrillos                    (01)4670184",
+      "San Genaro                (01)2547572",
+      "Mateo Pumacahua (01)2582410",
+      "Villa Chorrillos         (01)2545486"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "924803433",
+      "(01)6803000",
+      "924803433"
+    ],
+    "bomberos": [
+      "(01)4670729"
+    ],
+    "clinicas": [
+      "SANTA LEONOR - (01)4674495",
+      "SAN FRANCISCO ASIS - (01)2510321",
+      "CLINICA CHORRILLOS - 943398818",
+      "MAISON DE SANTE - (01)6196000",
+      "CLINICA GUADALUPE - (01)4675109"
+    ]
+  },
+  "CIENEGUILLA": {
+    "comisarias": [
+      "(01)4798611"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)4799595"
+    ],
+    "bomberos": [
+      "925115543"
+    ],
+    "clinicas": [
+      "-",
+      "-"
+    ]
+  },
+  "COMAS": {
+    "comisarias": [
+      "Santa Luzmila        (01)53611912",
+      "Universitaria         (01)5368422",
+      "Tupac Amaru         (01)5367074",
+      "Collique                   (01)5582652"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)5240670",
+      "930596186",
+      "(01)5733057"
+    ],
+    "bomberos": [
+      "(01)5374079"
+    ],
+    "clinicas": [
+      "CLINICA LA LUZ - (01)6139290",
+      "CLINICA UNIVERSITARIA - (01)5361917",
+      "CLINICA SANTA ROSA - (01)5365067",
+      "CLINICA VERSALLES - (01)6209638"
+    ]
+  },
+  "EL AGUSTINO": {
+    "comisarias": [
+      "(01)3277815",
+      "(01)3270180"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)3851438",
+      "940159051",
+      "940159100"
+    ],
+    "bomberos": [
+      "(01)3274669"
+    ],
+    "clinicas": [
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ]
+  },
+  "INDEPENDENCIA": {
+    "comisarias": [
+      "(01)5223500"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)7153354",
+      "(01)7153355",
+      "939688178"
+    ],
+    "bomberos": [
+      "(01)5220642"
+    ],
+    "clinicas": [
+      "CLINICA JESUS DEL NORTE - (01)6134444",
+      "CLINICA HZ MEDIC - (01)3010414",
+      "CLINICA LIMA NORTE - (01)5214827",
+      "POLICLINICO CRUZ DEL NORTE - (01)7232253"
+    ]
+  },
+  "JESUS MARIA": {
+    "comisarias": [
+      "(01)3324413"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)4717387",
+      "(01)4717451",
+      "(01)2613000",
+      "940378494"
+    ],
+    "bomberos": [
+      "(01)2620516"
+    ],
+    "clinicas": [
+      "SAN FELIPE - (01)2190000",
+      "PERUANO JAPONES - (01)2042100",
+      "CLINICA SERVISALUD - 995055021",
+      "LOS ANGELES - (01)3321845",
+      "CLINICA PORVENIR - (01)6528282"
+    ]
+  },
+  "LA MOLINA": {
+    "comisarias": [
+      "LAS PRADERAS      (01)4953628",
+      "LA PLANICIE            (01)3681871",
+      "SANTA FELICIA"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)3134444",
+      "(01)3681871",
+      "980122534"
+    ],
+    "bomberos": [
+      "(01)3680733"
+    ],
+    "clinicas": [
+      "ANGLO AMERICANA - (01)6198989",
+      "SANNA CENTRO CLINICO - (01)6355000",
+      "MONTEFIORI - (01)4375151",
+      "SAN FELIPE - (01)2190000"
+    ]
+  },
+  "LA VICTORIA": {
+    "comisarias": [
+      "(01)4233407",
+      "(01)3248362",
+      "(01)4327252"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)5102080",
+      "950139464"
+    ],
+    "bomberos": [
+      "(01)3245858"
+    ],
+    "clinicas": [
+      "ANTONIO RAIMONDI - (01)6115300",
+      "SAN FERNANDO - (01)4312484",
+      "OHE MEDICAL - (01)6854869",
+      "S.G NATCLAR - (01)2134141"
+    ]
+  },
+  "LIMA": {
+    "comisarias": [
+      "SAN ANDRES             (01)4265825",
+      "ALFONSO UGARTE  (01)3320048",
+      "MONSERRAT             (01)4318023",
+      "SEG. CIU. DE LIMA (01)6321300"
+    ],
+    "colegios": [
+      "MARKHAM     (01- 315-87-00)",
+      "SAN SILVESTRE  (01-241-33-34)",
+      "CASUARINAS   (968-205-135)",
+      "CAMBRIDGE   (01-254--01-07",
+      "PERUANO BRITANICO (01- 4360151)"
+    ],
+    "aguilas_negras": [
+      "954-911-309                                                       Av. Francisco Bolognesi 282, Santa Anita 15008"
+    ],
+    "extorsiones": [
+      "Linea 111"
+    ],
+    "serenazgo": [
+      "(01)3185050"
+    ],
+    "bomberos": [
+      "972731368",
+      "(01)4279161",
+      "(01)3656605"
+    ],
+    "clinicas": [
+      "MAISON DE SANTE - (01)6196030",
+      "SEÑOR DE LOS MILAGROS - (01)4313434",
+      "CLINICA INTERNACIONAL - (01)6196161",
+      "-",
+      "-"
+    ]
+  },
+  "LINCE": {
+    "comisarias": [],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)6191802",
+      "(01)4716389"
+    ],
+    "bomberos": [
+      "(01)4716442"
+    ],
+    "clinicas": [
+      "CLINICA RISO - (01)7190768",
+      "CAYETANO HEREDIA - 964108734",
+      "CLINICA GONZALES - (01)4711579",
+      "CLINICA OPELUCE - (01)2064700",
+      "DIAGNOSTICO PRINCIPE - (01)4718506"
+    ]
+  },
+  "LOS OLIVOS": {
+    "comisarias": [
+      "SOL DE ORO              (01)5330218",
+      "SOL DE ORO              (01)5333327",
+      "PRO                             (01)5401190",
+      "LAURA CALLER        (01)5287274"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)6138210",
+      "(01)3214545",
+      "(01)3214546"
+    ],
+    "bomberos": [
+      "(01)5331051"
+    ],
+    "clinicas": [
+      "SAN BARTOLOME - 963902671",
+      "MUNDO SALUD - 989011384",
+      "CORI - (01)4850616",
+      "CLINICA JESUS DEL NORTE - (01)6134444",
+      "CLINICA JESUS DEL NORTE - 920014510"
+    ]
+  },
+  "LURIGANCHO": {
+    "comisarias": [
+      "ZARATE                    (01)4595378",
+      "CANTO REY              (01)3870310",
+      "M. CACERES             980122495",
+      "LA HUAYRONA      (01)3885958",
+      "CAJA DE AGUA       998542145"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "945722569",
+      "(01)4581152",
+      "(01)4067968"
+    ],
+    "bomberos": [
+      "(01)3886666"
+    ],
+    "clinicas": [
+      "CLINICA SAN MARCOS - (01)3750022",
+      "CLINICA LIMA TAMBO - (01)4151600",
+      "CLINICA VILLA SALUD - (01)3991414",
+      "CLINICA SAN JUAN BAUTISTA - (01)6104545",
+      "CLINICA DE LA FAMILIA - (01)6077645"
+    ]
+  },
+  "LURIN": {
+    "comisarias": [],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)4300538",
+      "927129972",
+      "927420846"
+    ],
+    "bomberos": [
+      "(01)4303120"
+    ],
+    "clinicas": [
+      "CLINICA VIRGE DE GUADALUPE - 992777494",
+      "VIDA Y SALUD - (01)7350273",
+      "-",
+      "-"
+    ]
+  },
+  "MAGDALENA": {
+    "comisarias": [],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)4180710",
+      "954470337"
+    ],
+    "bomberos": [
+      "(01)2617139"
+    ],
+    "clinicas": [
+      "VIRGEN DEL ROSARIO - (01)2040200",
+      "CLINICA DEL TRABAJADOR - (01)4632639",
+      "CLINICA AVAN SALUD - (01)6234101",
+      "CIRE INTERVENCIONISTA - (01)2638683",
+      "CLINICA ÑAHUI - (01)2083410"
+    ]
+  },
+  "MIRAFLORES": {
+    "comisarias": [
+      "(01)4463018",
+      "SAN ANTONIO (01)4450056",
+      "SAN ANTONIO      980122504"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)3509090",
+      "942113691",
+      "942113692"
+    ],
+    "bomberos": [
+      "(01)4457447",
+      "(01)2425823"
+    ],
+    "clinicas": [
+      "CLINICA LOS ANDES - (01)2216032",
+      "CLINICA DEL INCA - (01)6106666",
+      "CLINICA MUNICIPAL MIRAFLORES - 937719895",
+      "CLINICA GOOD HOPE - (01)6107317",
+      "CLINIC PERU - 936891024"
+    ]
+  },
+  "PUEBLO LIBRE": {
+    "comisarias": [],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)3193160",
+      "994528317"
+    ],
+    "bomberos": [
+      "(01)2617139"
+    ],
+    "clinicas": [
+      "CLINICA SAN BERNARDO - 933244777",
+      "NORVISION - (01)3331920",
+      "PERUANO JAPONES - (01)2088000",
+      "SAN BERNARDO - (01)4613975",
+      "STELLA MARIS - (01)4613396"
+    ]
+  },
+  "RIMAC": {
+    "comisarias": [
+      "RIMAC                     (01)4810046",
+      "CIUDAD CAMPO  (01)4810183",
+      "PIEDRA LIZA           (01)3823649"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)7434150",
+      "(01)5004044",
+      "(01)7151024",
+      "80010600"
+    ],
+    "bomberos": [
+      "(01)4813183",
+      "(01)3826424"
+    ],
+    "clinicas": [
+      "LA ALAMEDA - (01)219 2500",
+      "CENTRO MATERNO INFANTIL - (01)3821615",
+      "-",
+      "-"
+    ]
+  },
+  "SAN BORJA": {
+    "comisarias": [],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [],
+    "bomberos": [],
+    "clinicas": [
+      "VESALIO - (01)6189999",
+      "SANTA LUCIA - 949904234"
+    ]
+  },
+  "SAN ISIDRO": {
+    "comisarias": [
+      "(01)4410222",
+      "(01)4411275",
+      "ORRANTIA  (01)2641932-2646561",
+      "COM. MUJER (01)4281556"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)3190450",
+      "(01)5139000",
+      "(01)5139008"
+    ],
+    "bomberos": [
+      "(01)2640339",
+      "(01)3991111"
+    ],
+    "clinicas": [
+      "CLINICA JAVIER PRADO - (01)4402000",
+      "CLINICA RICARDO PALMA - (01)2242224",
+      "CLINICA EL GOLF - (01)6310000",
+      "CLINICA ANGLO PERUANA - (01)6168900"
+    ]
+  },
+  "SAN MIGUEL": {
+    "comisarias": [
+      "(01)5661190",
+      "MARANGA      (01)4511331"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)7159700",
+      "934384"
+    ],
+    "bomberos": [
+      "(01)4613029"
+    ],
+    "clinicas": [
+      "CLINICA PROVIDENCIA - (01)6606000",
+      "CLINICA SAN GABRIEL - (01)6142200",
+      "CLINICA SAN JUDAS TADEO - (01)2191100"
+    ]
+  },
+  "SANTA ANITA": {
+    "comisarias": [
+      "(01)4782232"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)2078280",
+      "(01)3630396",
+      "939249716"
+    ],
+    "bomberos": [
+      "(01)4781099"
+    ],
+    "clinicas": [
+      "MUNICIPAL SANTA ANITA - (01)6371438",
+      "CLINICA TU SALUD - 984299900",
+      "CLINICA DE DIA SALUD LIMA - 929009536"
+    ]
+  },
+  "SANTIAGO DE SURCO": {
+    "comisarias": [
+      "(01)2473296"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)4115555",
+      "997386037"
+    ],
+    "bomberos": [
+      "(01)2746066"
+    ],
+    "clinicas": [
+      "CLINICA INTERNACIONAL - (01)6196161",
+      "CLINICA SAN PABLO - (01)6103333",
+      "CLINICA MESON DE SANTE - (01)6196000",
+      "CLINICA PADRE LUIS TEZZA - (01)6105050",
+      "CLINICA MONTE SUR - (01)3174000"
+    ]
+  },
+  "CHACARILLA DE SURCO": {
+    "comisarias": [
+      "(01)3726614"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [],
+    "bomberos": [],
+    "clinicas": [
+      "-"
+    ]
+  },
+  "SURQUILLO": {
+    "comisarias": [
+      "(01)4459083",
+      "980122517"
+    ],
+    "colegios": [],
+    "aguilas_negras": [],
+    "extorsiones": [],
+    "serenazgo": [
+      "(01)2410413"
+    ],
+    "bomberos": [
+      "(01)4457447"
+    ],
+    "clinicas": [
+      "CLINICA VIRGEN MILAGROSA - (01)2731310",
+      "CLINICA LA LUZ - (01)6139292",
+      "CLINICA ÑAHUI - (01)2083410"
+    ]
+  }
+}

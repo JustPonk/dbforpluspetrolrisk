@@ -10,6 +10,11 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Plus Petrol Colors */
+  --color-pluspetrol-blue: #003B7A;
+  --color-pluspetrol-lightblue: #0066CC;
+  --color-pluspetrol-gray: #6B7280;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +25,117 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(249 250 251); /* gray-50 */
+  color: rgb(17 24 39); /* gray-900 */
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom components */
+@layer components {
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-pluspetrol-blue);
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 300ms;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-pluspetrol-lightblue);
+  }
+  
+  .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    color: var(--color-pluspetrol-blue);
+    border: 2px solid var(--color-pluspetrol-blue);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 300ms;
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--color-pluspetrol-blue);
+    color: white;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+    transition: box-shadow 300ms;
+  }
+  
+  .card:hover {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  }
+}
+
+/* Leaflet Map Styles */
+@import 'leaflet/dist/leaflet.css';
+@import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
+
+.leaflet-container {
+  background: #1e293b;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  z-index: 1;
+}
+
+.leaflet-control-container .leaflet-routing-container-hide {
+  display: none;
+}
+
+.leaflet-routing-container {
+  background: rgba(30, 41, 59, 0.95) !important;
+  color: #e2e8f0 !important;
+  border-radius: 0.5rem;
+  border: 1px solid #475569;
+}
+
+.leaflet-routing-alt {
+  background: rgba(51, 65, 85, 0.8) !important;
+  color: #e2e8f0 !important;
+  border-color: #64748b !important;
+}
+
+.leaflet-routing-alt:hover {
+  background: rgba(71, 85, 105, 0.9) !important;
+}
+
+.leaflet-routing-alt table {
+  color: #e2e8f0 !important;
+}
+
+.leaflet-routing-geocoders input {
+  background: #334155 !important;
+  color: #e2e8f0 !important;
+  border-color: #475569 !important;
+}
+
+/* Custom scrollbar for routes sidebar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
 }
