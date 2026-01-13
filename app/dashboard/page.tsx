@@ -2,18 +2,20 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Home, BarChart3, Map } from 'lucide-react';
+import { Home, BarChart3, Map, Search } from 'lucide-react';
 import residencesData from '@/data/residences.json';
 import RoutesViewDesktop from '@/components/RoutesViewDesktop';
 import CompactView from '@/components/dashboard/CompactView';
 import ExpandedView from '@/components/dashboard/ExpandedView';
 import InfoModal from '@/components/dashboard/InfoModal';
 import ThemeToggle from '@/components/ThemeToggle';
+import { useRouter } from 'next/navigation';
 
 // Disable static generation for this page
 export const dynamic = 'force-dynamic';
 
 export default function DashboardPage() {
+  const router = useRouter();
   const [selectedResidence, setSelectedResidence] = useState(residencesData.residences[0]);
   const [currentView, setCurrentView] = useState<'main' | 'risk' | 'routes'>('main');
   const [isExpanded, setIsExpanded] = useState(false);
@@ -21,6 +23,18 @@ export default function DashboardPage() {
   const [modalType, setModalType] = useState<'donut' | 'speedometer' | 'thermometer' | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(true);
+
+  // Check for residence from sessionStorage (from search page)
+  useEffect(() => {
+    const storedResidenceId = sessionStorage.getItem('selectedResidenceId');
+    if (storedResidenceId) {
+      const residence = residencesData.residences.find(r => r.id === storedResidenceId);
+      if (residence) {
+        setSelectedResidence(residence);
+        sessionStorage.removeItem('selectedResidenceId'); // Clear after use
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const checkWidth = () => setIsDesktop(window.innerWidth >= 768);
@@ -76,6 +90,7 @@ export default function DashboardPage() {
     { id: 'main' as const, label: 'Principal', icon: Home },
     { id: 'risk' as const, label: 'Dashboard Riesgos', icon: BarChart3 },
     { id: 'routes' as const, label: 'Rutas', icon: Map },
+    { id: 'search' as const, label: 'Buscar Residencias', icon: Search, isLink: true },
   ];
 
   return (
@@ -100,20 +115,37 @@ export default function DashboardPage() {
           
           <nav className="space-y-2">
             {menuItems.map((item) => {
-              const Icon = item.icon;
+              const ItemIcon = item.icon;
+              const isLink = 'isLink' in item && item.isLink;
+              
+              if (isLink) {
+                return (
+                  <motion.button
+                    key={item.id}
+                    whileHover={{ scale: 1.02, x: 4 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => router.push('/search')}
+                    className="w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all bg-slate-700/50 dark:bg-slate-700/50 light:bg-slate-200/50 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-slate-300"
+                  >
+                    <ItemIcon className="w-5 h-5" />
+                    <span className="font-semibold">{item.label}</span>
+                  </motion.button>
+                );
+              }
+              
               return (
                 <motion.button
                   key={item.id}
                   whileHover={{ scale: 1.02, x: 4 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCurrentView(item.id)}
+                  onClick={() => setCurrentView(item.id as 'main' | 'risk' | 'routes')}
                   className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                     currentView === item.id
                       ? 'bg-blue-600 text-white shadow-lg'
                       : 'bg-slate-700/50 dark:bg-slate-700/50 light:bg-slate-200/50 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-slate-300'
                   }`}
                 >
-                  <Icon className="w-5 h-5" />
+                  <ItemIcon className="w-5 h-5" />
                   <span className="font-semibold">{item.label}</span>
                 </motion.button>
               );
