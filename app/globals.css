@@ -1,13 +1,44 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Light Theme Variables */
+.light {
+  --background: 255 255 255; /* white */
+  --foreground: 15 23 42; /* slate-900 */
+  --primary: 37 99 235; /* blue-600 */
+  --secondary: 71 85 105; /* slate-600 */
+  --accent: 234 179 8; /* yellow-500 */
+  --border: 226 232 240; /* slate-200 */
+  --card: 248 250 252; /* slate-50 */
+  --card-hover: 241 245 249; /* slate-100 */
+  --sidebar: 241 245 249; /* slate-100 */
+  --topbar: 255 255 255; /* white */
+  --input: 255 255 255; /* white */
+  --muted: 148 163 184; /* slate-400 */
+  --success: 34 197 94; /* green-500 */
+  --warning: 234 179 8; /* yellow-500 */
+  --danger: 239 68 68; /* red-500 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+/* Dark Theme Variables */
+.dark {
+  --background: 15 23 42; /* slate-900 */
+  --foreground: 248 250 252; /* slate-50 */
+  --primary: 59 130 246; /* blue-500 */
+  --secondary: 100 116 139; /* slate-500 */
+  --accent: 250 204 21; /* yellow-400 */
+  --border: 51 65 85; /* slate-700 */
+  --card: 30 41 59; /* slate-800 */
+  --card-hover: 51 65 85; /* slate-700 */
+  --sidebar: 15 23 42; /* slate-900 */
+  --topbar: 30 41 59; /* slate-800 */
+  --input: 51 65 85; /* slate-700 */
+  --muted: 148 163 184; /* slate-400 */
+  --success: 34 197 94; /* green-500 */
+  --warning: 234 179 8; /* yellow-500 */
+  --danger: 239 68 68; /* red-500 */
+}
+
+:root {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   
@@ -17,22 +48,16 @@
   --color-pluspetrol-gray: #6B7280;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: rgb(249 250 251); /* gray-50 */
-  color: rgb(17 24 39); /* gray-900 */
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
   font-family: ui-sans-serif, system-ui, sans-serif;
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 300ms, color 300ms;
 }
 
 /* Custom components */
@@ -53,9 +78,9 @@ body {
   
   .btn-secondary {
     padding: 0.75rem 1.5rem;
-    background-color: white;
-    color: var(--color-pluspetrol-blue);
-    border: 2px solid var(--color-pluspetrol-blue);
+    background-color: rgb(var(--card));
+    color: rgb(var(--foreground));
+    border: 2px solid rgb(var(--border));
     border-radius: 0.5rem;
     font-weight: 600;
     cursor: pointer;
@@ -63,19 +88,20 @@ body {
   }
   
   .btn-secondary:hover {
-    background-color: var(--color-pluspetrol-blue);
-    color: white;
+    background-color: rgb(var(--card-hover));
   }
   
   .card {
-    background-color: white;
+    background-color: rgb(var(--card));
+    color: rgb(var(--foreground));
     border-radius: 0.75rem;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
     padding: 1.5rem;
-    transition: box-shadow 300ms;
+    transition: all 300ms;
   }
   
   .card:hover {
+    background-color: rgb(var(--card-hover));
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
   }
 }
