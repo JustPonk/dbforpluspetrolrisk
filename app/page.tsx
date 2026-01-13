@@ -8,19 +8,19 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#003B7A] via-[#0066CC] to-blue-600 flex items-center justify-center overflow-hidden">
-      <div className="text-center z-10">
+    <div className="min-h-screen bg-gradient-to-br from-[#003B7A] via-[#0066CC] to-blue-600 flex items-center justify-center overflow-hidden px-4">
+      <div className="text-center z-10 max-w-4xl">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-8"
+          className="mb-6 md:mb-8"
         >
-          <Shield className="w-32 h-32 mx-auto text-white mb-4" />
-          <h1 className="text-6xl font-bold text-white mb-4">
+          <Shield className="w-20 h-20 md:w-32 md:h-32 mx-auto text-white mb-3 md:mb-4" />
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-3 md:mb-4">
             Pluspetrol
           </h1>
-          <p className="text-2xl text-blue-100 mb-8">
+          <p className="text-lg md:text-2xl text-blue-100 mb-6 md:mb-8 px-4">
             Sistema de Evaluación de Seguridad Residencial
           </p>
         </motion.div>
@@ -29,19 +29,19 @@ export default function Home() {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="flex gap-8 justify-center mb-12"
+          className="flex flex-col md:flex-row gap-6 md:gap-8 justify-center mb-8 md:mb-12"
         >
           <div className="text-white">
-            <Building2 className="w-12 h-12 mx-auto mb-2" />
-            <p className="text-lg">11 Residencias</p>
+            <Building2 className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2" />
+            <p className="text-base md:text-lg">11 Residencias</p>
           </div>
           <div className="text-white">
-            <Shield className="w-12 h-12 mx-auto mb-2" />
-            <p className="text-lg">Evaluadas</p>
+            <Shield className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2" />
+            <p className="text-base md:text-lg">Evaluadas</p>
           </div>
           <div className="text-white">
-            <TrendingUp className="w-12 h-12 mx-auto mb-2" />
-            <p className="text-lg">Análisis Completo</p>
+            <TrendingUp className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2" />
+            <p className="text-base md:text-lg">Análisis Completo</p>
           </div>
         </motion.div>
 

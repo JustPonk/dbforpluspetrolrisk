@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Home, BarChart3, Map, Maximize2, Minimize2 } from 'lucide-react';
 import residencesData from '@/data/residences.json';
@@ -15,6 +15,15 @@ export default function DashboardPage() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState<'donut' | 'speedometer' | 'thermometer' | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    const checkWidth = () => setIsDesktop(window.innerWidth >= 768);
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
 
   const getRiskColor = (level: string) => {
     switch (level) {
@@ -67,14 +76,22 @@ export default function DashboardPage() {
 
   return (
     <div className="flex h-screen bg-slate-900">
-      {/* Sidebar */}
+      {/* Sidebar - Hidden on mobile, visible on desktop */}
       <motion.div
         initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        className="w-64 bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 text-white shadow-xl border-r border-slate-700"
+        animate={{ x: (mobileMenuOpen || isDesktop) ? 0 : -256, opacity: 1 }}
+        className="fixed md:relative w-64 h-full bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 text-white shadow-xl border-r border-slate-700 z-50"
       >
-        <div className="p-6">
-          <h1 className="text-2xl font-bold mb-8 text-blue-400">Pluspetrol</h1>
+        <div className="p-4 md:p-6">
+          <div className="flex justify-between items-center mb-6 md:mb-8">
+            <h1 className="text-xl md:text-2xl font-bold text-blue-400">Pluspetrol</h1>
+            <button 
+              onClick={() => setMobileMenuOpen(false)}
+              className="md:hidden text-white"
+            >
+              ✕
+            </button>
+          </div>
           
           <nav className="space-y-2">
             {menuItems.map((item) => {
@@ -102,14 +119,22 @@ export default function DashboardPage() {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileMenuOpen(true)}
+          className="md:hidden fixed top-4 left-4 z-40 bg-blue-600 text-white p-2 rounded-lg shadow-lg"
+        >
+          ☰
+        </button>
+
         {/* Top Bar */}
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="bg-slate-800 border-b border-slate-700 px-8 py-4 shadow-sm"
+          className="bg-slate-800 border-b border-slate-700 px-4 md:px-8 py-3 md:py-4 shadow-sm"
         >
-          <div className="flex items-center gap-4">
-            <label className="text-sm font-semibold text-slate-200">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4">
+            <label className="text-xs md:text-sm font-semibold text-slate-200">
               Residencia:
             </label>
             <select
@@ -118,7 +143,7 @@ export default function DashboardPage() {
                 const residence = residencesData.residences.find(r => r.id === e.target.value);
                 if (residence) setSelectedResidence(residence);
               }}
-              className="px-4 py-2 pr-10 bg-slate-700 border-2 border-slate-600 rounded-lg cursor-pointer font-semibold text-slate-100 hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+              className="w-full md:w-auto px-3 md:px-4 py-1.5 md:py-2 pr-8 md:pr-10 bg-slate-700 border-2 border-slate-600 rounded-lg cursor-pointer font-semibold text-xs md:text-sm text-slate-100 hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             >
               {residencesData.residences.map((residence) => (
                 <option key={residence.id} value={residence.id}>
@@ -127,14 +152,14 @@ export default function DashboardPage() {
               ))}
             </select>
             
-            <div className="ml-auto text-sm text-slate-300">
+            <div className="md:ml-auto text-xs md:text-sm text-slate-300 truncate max-w-full md:max-w-none">
               <span className="font-semibold">{selectedResidence.address}</span>
             </div>
           </div>
         </motion.div>
 
         {/* Content Area */}
-        <div className={`flex-1 overflow-auto bg-slate-900 ${currentView === 'routes' ? '' : 'p-8'}`}>
+        <div className={`flex-1 overflow-auto bg-slate-900 ${currentView === 'routes' ? '' : 'p-4 md:p-8'}`}>
           <motion.div
             key={currentView}
             initial={{ opacity: 0, y: 20 }}
@@ -144,9 +169,9 @@ export default function DashboardPage() {
           >
             {currentView === 'main' && (
               <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-12 gap-6">
+                <div className="flex flex-col lg:grid lg:grid-cols-12 gap-4 lg:gap-6">
                   {/* Tarjeta Principal */}
-                  <div className="col-span-7 bg-slate-800 rounded-xl shadow-xl border border-slate-700 p-6">
+                  <div className="lg:col-span-7 bg-slate-800 rounded-xl shadow-xl border border-slate-700 p-4 md:p-6">
                     <div className="aspect-video bg-gradient-to-br from-slate-700 to-slate-600 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
                       <img
                         src={selectedResidence.image}
@@ -162,16 +187,16 @@ export default function DashboardPage() {
                       />
                     </div>
 
-                    <h2 className="text-2xl font-bold text-blue-400 mb-2">
+                    <h2 className="text-xl md:text-2xl font-bold text-blue-400 mb-2">
                       {selectedResidence.name}
                     </h2>
 
                     <div className="flex items-center gap-2 text-slate-300 mb-3">
-                      <span className="text-sm">{selectedResidence.address}</span>
+                      <span className="text-xs md:text-sm">{selectedResidence.address}</span>
                     </div>
 
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="text-sm font-semibold text-slate-200">Nivel de Riesgo:</span>
+                      <span className="text-xs md:text-sm font-semibold text-slate-200">Nivel de Riesgo:</span>
                       <span className={`px-3 py-1 rounded-full text-xs font-bold border-2 uppercase ${getRiskColor(selectedResidence.riskLevel)}`}>
                         {selectedResidence.riskLevel}
                       </span>
@@ -197,9 +222,9 @@ export default function DashboardPage() {
                   </div>
 
                   {/* Panel de Estadísticas */}
-                  <div className="col-span-5 space-y-4">
-                    <div className="bg-slate-800 rounded-xl shadow-xl border border-slate-700 p-6">
-                      <h3 className="text-xl font-bold text-slate-100 mb-4">Evaluación de Seguridad</h3>
+                  <div className="lg:col-span-5 space-y-4">
+                    <div className="bg-slate-800 rounded-xl shadow-xl border border-slate-700 p-4 md:p-6">
+                      <h3 className="text-lg md:text-xl font-bold text-slate-100 mb-4">Evaluación de Seguridad</h3>
                       <div className="space-y-3">
                         <div>
                           <div className="flex justify-between text-sm mb-1">

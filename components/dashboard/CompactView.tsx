@@ -19,26 +19,14 @@ interface CompactViewProps {
 
 export default function CompactView({ selectedResidence, currentRiskLevel }: CompactViewProps) {
   return (
-    <div className="grid grid-cols-[200px_1fr_200px] gap-3 h-[360px]">
-      {/* Termómetro de Amenaza - Columna 1 */}
-      <ThermometerDisplay
-        title="¿Qué tan amenazado estoy?"
-        level={selectedResidence.threatLevel}
-        description=""
-        delay={0.1}
-        animationKey="compact-threat"
-        height="h-70"
-        size="small"
-      />
-
-      {/* Imagen y Velocímetro - Columna 2 */}
-      <div className="flex flex-col gap-3">
-        {/* Imagen arriba */}
+    <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[200px_1fr_200px] lg:gap-3 min-h-[360px]">
+      {/* Imagen - Primero en mobile */}
+      <div className="order-1 lg:order-2 flex flex-col gap-4">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="bg-slate-800 rounded-xl shadow-xl border border-slate-700 h-80"
+          className="bg-slate-800 rounded-xl shadow-xl border border-slate-700 h-64 lg:h-80"
         >
           <div className="h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex items-center justify-center overflow-hidden">
             <img
@@ -52,12 +40,12 @@ export default function CompactView({ selectedResidence, currentRiskLevel }: Com
           </div>
         </motion.div>
 
-        {/* Velocímetro abajo */}
+        {/* Velocímetro */}
         <motion.div
           initial={{ scale: 1 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.5 }}
-          className="bg-slate-800 rounded-xl shadow-xl border border-slate-700 h-[215px]"
+          className="bg-slate-800 rounded-xl shadow-xl border border-slate-700 h-56 lg:h-[215px]"
         >
           <Speedometer 
             value={selectedResidence.riskScore} 
@@ -67,16 +55,31 @@ export default function CompactView({ selectedResidence, currentRiskLevel }: Com
         </motion.div>
       </div>
 
-      {/* Termómetro de Vulnerabilidad - Columna 3 */}
-      <ThermometerDisplay
-        title="¿Qué tan vulnerable soy?"
-        level={selectedResidence.vulnerabilityLevel}
-        description=""
-        delay={0.2}
-        animationKey="compact-vulnerability"
-        height="h-70"
-        size="small"
-      />
+      {/* Termómetro de Amenaza */}
+      <div className="order-2 lg:order-1">
+        <ThermometerDisplay
+          title="¿Qué tan amenazado estoy?"
+          level={selectedResidence.threatLevel}
+          description=""
+          delay={0.1}
+          animationKey="compact-threat"
+          height="h-64 lg:h-70"
+          size="small"
+        />
+      </div>
+
+      {/* Termómetro de Vulnerabilidad */}
+      <div className="order-3">
+        <ThermometerDisplay
+          title="¿Qué tan vulnerable soy?"
+          level={selectedResidence.vulnerabilityLevel}
+          description=""
+          delay={0.2}
+          animationKey="compact-vulnerability"
+          height="h-64 lg:h-70"
+          size="small"
+        />
+      </div>
     </div>
   );
 }
