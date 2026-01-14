@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
-/* Light Theme Variables */
+/* Light Theme Variables - Pluspetrol Blue Theme */
 .light {
-  --background: 255 255 255; /* white */
-  --foreground: 15 23 42; /* slate-900 */
-  --primary: 37 99 235; /* blue-600 */
-  --secondary: 71 85 105; /* slate-600 */
-  --accent: 234 179 8; /* yellow-500 */
-  --border: 226 232 240; /* slate-200 */
-  --card: 248 250 252; /* slate-50 */
-  --card-hover: 241 245 249; /* slate-100 */
-  --sidebar: 241 245 249; /* slate-100 */
-  --topbar: 255 255 255; /* white */
-  --input: 255 255 255; /* white */
-  --muted: 148 163 184; /* slate-400 */
+  --background: 248 250 252; /* slate-50 - fondo general claro */
+  --foreground: 15 23 42; /* slate-900 - texto principal */
+  --primary: 0 59 122; /* #003B7A - azul Pluspetrol */
+  --secondary: 0 102 204; /* #0066CC - azul claro Pluspetrol */
+  --accent: 37 99 235; /* blue-600 - acentos */
+  --border: 219 234 254; /* blue-100 - bordes suaves */
+  --card: 255 255 255; /* white - tarjetas */
+  --card-hover: 240 249 255; /* blue-50 - hover en tarjetas */
+  --sidebar: 239 246 255; /* blue-50 - sidebar */
+  --topbar: 255 255 255; /* white - barra superior */
+  --input: 240 249 255; /* blue-50 - inputs */
+  --muted: 100 116 139; /* slate-500 */
   --success: 34 197 94; /* green-500 */
   --warning: 234 179 8; /* yellow-500 */
   --danger: 239 68 68; /* red-500 */

@@ -9,6 +9,7 @@ import CompactView from '@/components/dashboard/CompactView';
 import ExpandedView from '@/components/dashboard/ExpandedView';
 import InfoModal from '@/components/dashboard/InfoModal';
 import ThemeToggle from '@/components/ThemeToggle';
+import QuickSearch from '@/components/QuickSearch';
 import { useRouter } from 'next/navigation';
 
 // Disable static generation for this page
@@ -100,11 +101,11 @@ export default function DashboardPage() {
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: (mobileMenuOpen || isDesktop) ? 0 : -256, opacity: 1 }}
-          className="fixed md:relative w-64 h-full bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 dark:from-slate-800 dark:via-blue-900 dark:to-slate-800 light:from-slate-100 light:via-blue-50 light:to-slate-100 text-white dark:text-white light:text-slate-900 shadow-xl border-r border-slate-700 dark:border-slate-700 light:border-slate-200 z-50"
+          className="fixed md:relative w-64 h-full bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 dark:from-slate-800 dark:via-blue-900 dark:to-slate-800 light:from-white light:via-blue-50 light:to-white text-white dark:text-white light:text-slate-900 shadow-xl border-r border-slate-700 dark:border-slate-700 light:border-blue-200 z-50"
         >
         <div className="p-4 md:p-6">
           <div className="flex justify-between items-center mb-6 md:mb-8">
-            <h1 className="text-xl md:text-2xl font-bold text-blue-400 dark:text-blue-400 light:text-blue-600">Pluspetrol</h1>
+            <h1 className="text-xl md:text-2xl font-bold text-blue-400 dark:text-blue-400 light:text-[#003B7A]">Pluspetrol</h1>
             <button 
               onClick={() => setMobileMenuOpen(false)}
               className="md:hidden text-white dark:text-white light:text-slate-900"
@@ -125,7 +126,7 @@ export default function DashboardPage() {
                     whileHover={{ scale: 1.02, x: 4 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => router.push('/search')}
-                    className="w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all bg-slate-700/50 dark:bg-slate-700/50 light:bg-slate-200/50 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-slate-300"
+                    className="w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all bg-slate-700/50 dark:bg-slate-700/50 light:bg-blue-100/50 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-blue-200"
                   >
                     <ItemIcon className="w-5 h-5" />
                     <span className="font-semibold">{item.label}</span>
@@ -142,7 +143,7 @@ export default function DashboardPage() {
                   className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                     currentView === item.id
                       ? 'bg-blue-600 text-white shadow-lg'
-                      : 'bg-slate-700/50 dark:bg-slate-700/50 light:bg-slate-200/50 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-slate-300'
+                      : 'bg-slate-700/50 dark:bg-slate-700/50 light:bg-blue-100/50 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-blue-200'
                   }`}
                 >
                   <ItemIcon className="w-5 h-5" />
@@ -153,7 +154,7 @@ export default function DashboardPage() {
           </nav>
           
           {/* Theme Toggle in Sidebar */}
-          <div className="mt-8 pt-8 border-t border-slate-700 dark:border-slate-700 light:border-slate-300">
+          <div className="mt-8 pt-8 border-t border-slate-700 dark:border-slate-700 light:border-blue-200">
             <ThemeToggle />
           </div>
         </div>
@@ -172,39 +173,31 @@ export default function DashboardPage() {
           </button>
         )}
 
-        {/* Top Bar - Hidden when dark:bg-slate-800 light:bg-white border-b border-slate-700 dark:border-slate-700 light:border-slate-200 px-4 md:px-8 py-3 md:py-4 shadow-sm"
+        {/* Top Bar - Hidden when expanded */}
+        {!isExpanded && (
+        <motion.div
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="bg-slate-800 dark:bg-slate-800 light:bg-white border-b border-slate-700 dark:border-slate-700 light:border-blue-200 px-4 md:px-8 py-3 md:py-4 shadow-sm"
         >
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4">
-            <label className="text-xs md:text-sm font-semibold text-slate-200 dark:text-slate-200 light:text-slate-700">
-              Residencia:
-            </label>
-            <select
-              value={selectedResidence.id}
-              onChange={(e) => {
-                const residence = residencesData.residences.find(r => r.id === e.target.value);
+          <div className="flex items-center gap-3 md:gap-4">
+            {/* Quick Search - Replaces old dropdown */}
+            <QuickSearch
+              currentResidenceId={selectedResidence.id}
+              onSelectResidence={(id) => {
+                const residence = residencesData.residences.find(r => r.id === id);
                 if (residence) setSelectedResidence(residence);
               }}
-              className="w-full md:w-auto px-3 md:px-4 py-1.5 md:py-2 pr-8 md:pr-10 bg-slate-700 dark:bg-slate-700 light:bg-slate-100 border-2 border-slate-600 dark:border-slate-600 light:border-slate-300 rounded-lg cursor-pointer font-semibold text-xs md:text-sm text-slate-100 dark:text-slate-100 light:text-slate-900 hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-            >
-              {residencesData.residences.map((residence) => (
-                <option key={residence.id} value={residence.id}>
-                  {residence.id} - {residence.name}
-                </option>
-              ))}
-            </select>
+            />
             
-            <div className="md:ml-auto flex items-center gap-3">
-              <div className="text-xs md:text-sm text-slate-300 dark:text-slate-300 light:text-slate-600 truncate">
-                <span className="font-semibold">{selectedResidence.address}</span>
-              </div>
-              <div className="hidden md:block">
-                <ThemeToggle />
-              </div
-              ))}
-            </select>dark:bg-slate-900 light:bg-gray-50 
-            
-            <div className="md:ml-auto text-xs md:text-sm text-slate-300 truncate max-w-full md:max-w-none">
+            {/* Address Display (Hidden on small mobile) */}
+            <div className="hidden sm:block text-xs md:text-sm text-slate-300 dark:text-slate-300 light:text-slate-600 truncate">
               <span className="font-semibold">{selectedResidence.address}</span>
+            </div>
+            
+            {/* Theme Toggle (Desktop only, also in sidebar) */}
+            <div className="hidden md:block">
+              <ThemeToggle />
             </div>
           </div>
         </motion.div>
@@ -223,8 +216,8 @@ export default function DashboardPage() {
               <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col lg:grid lg:grid-cols-12 gap-4 lg:gap-6">
                   {/* Tarjeta Principal */}
-                  <div className="lg:col-span-7 bg-slate-800 dark:bg-slate-800 light:bg-white rounded-xl shadow-xl border border-slate-700 dark:border-slate-700 light:border-slate-200 p-4 md:p-6">
-                    <div className="aspect-video bg-gradient-to-br from-slate-700 to-slate-600 dark:from-slate-700 dark:to-slate-600 light:from-slate-200 light:to-slate-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                  <div className="lg:col-span-7 bg-slate-800 dark:bg-slate-800 light:bg-white rounded-xl shadow-xl border border-slate-700 dark:border-slate-700 light:border-blue-200 p-4 md:p-6">
+                    <div className="aspect-video bg-gradient-to-br from-slate-700 to-slate-600 dark:from-slate-700 dark:to-slate-600 light:from-blue-100 light:to-blue-200 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
                       <img
                         src={selectedResidence.image}
                         alt={selectedResidence.name}
@@ -239,7 +232,7 @@ export default function DashboardPage() {
                       />
                     </div>
 
-                    <h2 className="text-xl md:text-2xl font-bold text-blue-400 dark:text-blue-400 light:text-blue-600 mb-2">
+                    <h2 className="text-xl md:text-2xl font-bold text-blue-400 dark:text-blue-400 light:text-[#003B7A] mb-2">
                       {selectedResidence.name}
                     </h2>
 
@@ -254,20 +247,20 @@ export default function DashboardPage() {
                       </span>
                     </div>
 
-                    <div className="bg-slate-700 dark:bg-slate-700 light:bg-slate-100 rounded-lg p-4 border-2 border-slate-600 dark:border-slate-600 light:border-slate-300">
-                      <h3 className="font-bold text-blue-400 dark:text-blue-400 light:text-blue-600 mb-3">Teléfonos de Emergencia</h3>
+                    <div className="bg-slate-700 dark:bg-slate-700 light:bg-blue-50 rounded-lg p-4 border-2 border-slate-600 dark:border-slate-600 light:border-blue-200">
+                      <h3 className="font-bold text-blue-400 dark:text-blue-400 light:text-[#003B7A] mb-3">Teléfonos de Emergencia</h3>
                       <div className="grid grid-cols-3 gap-3 text-sm">
                         <div className="text-center">
-                          <div className="font-semibold text-slate-300 dark:text-slate-300 light:text-slate-600">Policía</div>
-                          <div className="text-lg font-bold text-blue-400 dark:text-blue-400 light:text-blue-600">{selectedResidence.emergencyContacts.police}</div>
+                          <div className="font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700">Policía</div>
+                          <div className="text-lg font-bold text-blue-400 dark:text-blue-400 light:text-[#0066CC]">{selectedResidence.emergencyContacts.police}</div>
                         </div>
                         <div className="text-center">
-                          <div className="font-semibold text-slate-300 dark:text-slate-300 light:text-slate-600">Bomberos</div>
-                          <div className="text-lg font-bold text-blue-400 dark:text-blue-400 light:text-blue-600">{selectedResidence.emergencyContacts.fire}</div>
+                          <div className="font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700">Bomberos</div>
+                          <div className="text-lg font-bold text-blue-400 dark:text-blue-400 light:text-[#0066CC]">{selectedResidence.emergencyContacts.fire}</div>
                         </div>
                         <div className="text-center">
-                          <div className="font-semibold text-slate-300 dark:text-slate-300 light:text-slate-600">Ambulancia</div>
-                          <div className="text-lg font-bold text-blue-400 dark:text-blue-400 light:text-blue-600">{selectedResidence.emergencyContacts.ambulance}</div>
+                          <div className="font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700">Ambulancia</div>
+                          <div className="text-lg font-bold text-blue-400 dark:text-blue-400 light:text-[#0066CC]">{selectedResidence.emergencyContacts.ambulance}</div>
                         </div>
                       </div>
                     </div>
@@ -275,15 +268,15 @@ export default function DashboardPage() {
 
                   {/* Panel de Estadísticas */}
                   <div className="lg:col-span-5 space-y-4">
-                    <div className="bg-slate-800 dark:bg-slate-800 light:bg-white rounded-xl shadow-xl border border-slate-700 dark:border-slate-700 light:border-slate-200 p-4 md:p-6">
-                      <h3 className="text-lg md:text-xl font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 mb-4">Evaluación de Seguridad</h3>
+                    <div className="bg-slate-800 dark:bg-slate-800 light:bg-white rounded-xl shadow-xl border border-slate-700 dark:border-slate-700 light:border-blue-200 p-4 md:p-6">
+                      <h3 className="text-lg md:text-xl font-bold text-slate-100 dark:text-slate-100 light:text-[#003B7A] mb-4">Evaluación de Seguridad</h3>
                       <div className="space-y-3">
                         <div>
                           <div className="flex justify-between text-sm mb-1">
-                            <span className="text-slate-300 dark:text-slate-300 light:text-slate-600">Riesgo General</span>
-                            <span className="text-blue-400 dark:text-blue-400 light:text-blue-600 font-bold">{selectedResidence.riskScore}/100</span>
+                            <span className="text-slate-300 dark:text-slate-300 light:text-slate-700">Riesgo General</span>
+                            <span className="text-blue-400 dark:text-blue-400 light:text-[#0066CC] font-bold">{selectedResidence.riskScore}/100</span>
                           </div>
-                          <div className="w-full bg-slate-700 dark:bg-slate-700 light:bg-slate-200 rounded-full h-2">
+                          <div className="w-full bg-slate-700 dark:bg-slate-700 light:bg-blue-100 rounded-full h-2">
                             <div 
                               className="bg-blue-500 h-2 rounded-full transition-all duration-500"
                               style={{ width: `${selectedResidence.riskScore}%` }}
@@ -293,10 +286,10 @@ export default function DashboardPage() {
 
                         <div>
                           <div className="flex justify-between text-sm mb-1">
-                            <span className="text-slate-300 dark:text-slate-300 light:text-slate-600">Amenaza</span>
+                            <span className="text-slate-300 dark:text-slate-300 light:text-slate-700">Amenaza</span>
                             <span className="text-red-400 dark:text-red-400 light:text-red-600 font-bold">{selectedResidence.threatLevel}/100</span>
                           </div>
-                          <div className="w-full bg-slate-700 dark:bg-slate-700 light:bg-slate-200 rounded-full h-2">
+                          <div className="w-full bg-slate-700 dark:bg-slate-700 light:bg-blue-100 rounded-full h-2">
                             <div 
                               className="bg-red-500 h-2 rounded-full transition-all duration-500"
                               style={{ width: `${selectedResidence.threatLevel}%` }}
@@ -306,10 +299,10 @@ export default function DashboardPage() {
 
                         <div>
                           <div className="flex justify-between text-sm mb-1">
-                            <span className="text-slate-300 dark:text-slate-300 light:text-slate-600">Vulnerabilidad</span>
+                            <span className="text-slate-300 dark:text-slate-300 light:text-slate-700">Vulnerabilidad</span>
                             <span className="text-yellow-400 dark:text-yellow-400 light:text-yellow-600 font-bold">{selectedResidence.vulnerabilityLevel}/100</span>
                           </div>
-                          <div className="w-full bg-slate-700 dark:bg-slate-700 light:bg-slate-200 rounded-full h-2">
+                          <div className="w-full bg-slate-700 dark:bg-slate-700 light:bg-blue-100 rounded-full h-2">
                             <div 
                               className="bg-yellow-500 h-2 rounded-full transition-all duration-500"
                               style={{ width: `${selectedResidence.vulnerabilityLevel}%` }}
