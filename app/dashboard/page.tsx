@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Home, BarChart3, Map, Search, Activity } from 'lucide-react';
+import { Home, BarChart3, Map, Search, Activity, Clock, Award } from 'lucide-react';
 import residencesData from '@/data/residences.json';
 import RoutesViewDesktop from '@/components/RoutesViewDesktop';
 import CompactView from '@/components/dashboard/CompactView';
@@ -91,9 +91,11 @@ export default function DashboardPage() {
     { id: 'main' as const, label: 'Principal', icon: Home },
     { id: 'risk' as const, label: 'Dashboard Riesgos', icon: BarChart3 },
     { id: 'routes' as const, label: 'Rutas', icon: Map },
+    { id: 'ejecutivo' as const, label: 'Dashboard Ejecutivo', icon: Award, isLink: true, path: '/ejecutivo' },
     { id: 'map' as const, label: 'Mapa General', icon: Map, isLink: true, path: '/map' },
     { id: 'comparativa' as const, label: 'Comparativa', icon: BarChart3, isLink: true, path: '/comparativa' },
     { id: 'estadisticas' as const, label: 'Estadísticas', icon: Activity, isLink: true, path: '/estadisticas' },
+    { id: 'tiempos-respuesta' as const, label: 'Tiempos de Respuesta', icon: Clock, isLink: true, path: '/tiempos-respuesta' },
     { id: 'search' as const, label: 'Buscar Residencias', icon: Search, isLink: true, path: '/search' },
   ];
 
