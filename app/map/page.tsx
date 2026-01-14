@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import ThemeToggle from '@/components/ThemeToggle';
 import residencesData from '@/data/residences.json';
 import { residenceCoordinates } from '@/data/coordinates';
+import 'leaflet/dist/leaflet.css';
 
 // Disable static generation
 export const dynamic = 'force-dynamic';
@@ -26,7 +27,6 @@ export default function MapaGeneralPage() {
 
       try {
         const L = await import('leaflet');
-        require('leaflet/dist/leaflet.css');
 
         // Initialize map centered on Lima, Peru
         const map = L.map(mapRef.current, {
