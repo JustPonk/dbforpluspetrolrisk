@@ -91,7 +91,8 @@ export default function DashboardPage() {
     { id: 'main' as const, label: 'Principal', icon: Home },
     { id: 'risk' as const, label: 'Dashboard Riesgos', icon: BarChart3 },
     { id: 'routes' as const, label: 'Rutas', icon: Map },
-    { id: 'search' as const, label: 'Buscar Residencias', icon: Search, isLink: true },
+    { id: 'map' as const, label: 'Mapa General', icon: Map, isLink: true, path: '/map' },
+    { id: 'search' as const, label: 'Buscar Residencias', icon: Search, isLink: true, path: '/search' },
   ];
 
   return (
@@ -125,7 +126,7 @@ export default function DashboardPage() {
                     key={item.id}
                     whileHover={{ scale: 1.02, x: 4 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => router.push('/search')}
+                    onClick={() => router.push(item.path || `/${item.id}`)}
                     className="w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all bg-slate-700/50 dark:bg-slate-700/50 light:bg-blue-100/50 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-blue-200"
                   >
                     <ItemIcon className="w-5 h-5" />
