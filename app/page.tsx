@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { Building2, Shield, TrendingUp } from 'lucide-react';
 
+// Disable static generation for this page
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
   const router = useRouter();
 

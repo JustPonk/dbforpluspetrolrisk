@@ -12,7 +12,25 @@ interface DonutChartProps {
   isExpanded: boolean;
 }
 
+// Función para obtener color basado en el valor del porcentaje
+function getColorByValue(value: number): string {
+  if (value <= 20) {
+    return '#22c55e'; // verde
+  } else if (value <= 40) {
+    return '#3b82f6'; // azul
+  } else if (value <= 60) {
+    return '#eab308'; // amarillo
+  } else if (value <= 80) {
+    return '#f97316'; // naranja
+  } else {
+    return '#ef4444'; // rojo
+  }
+}
+
 export default function DonutChart({ data, index, isExpanded }: DonutChartProps) {
+  // Usar color dinámico solo en expanded view, en compact view usar el color original
+  const displayColor = isExpanded ? getColorByValue(data.value) : data.color;
+  
   return (
     <motion.div
       key={`donut-${data.name}-${isExpanded}`}
@@ -37,7 +55,7 @@ export default function DonutChart({ data, index, isExpanded }: DonutChartProps)
               endAngle={-270}
               dataKey="value"
             >
-              <Cell fill={data.color} />
+              <Cell fill={displayColor} />
               <Cell fill="#E5E7EB" />
             </Pie>
           </PieChart>
@@ -46,7 +64,7 @@ export default function DonutChart({ data, index, isExpanded }: DonutChartProps)
           <span className="text-3xl font-bold text-slate-100">{data.value}%</span>
         </div>
       </div>
-      <div className="mt-2 py-2 rounded text-center text-xs font-bold text-white" style={{ backgroundColor: data.color }}>
+      <div className="mt-2 py-2 rounded text-center text-xs font-bold text-white" style={{ backgroundColor: displayColor }}>
         {data.label}
       </div>
     </motion.div>

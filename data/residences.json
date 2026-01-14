@@ -26,9 +26,9 @@
     {
       "id": "PPAAM02-2025",
       "code": "PPAAM02-2025",
-      "name": "SAN MIGUEL",
+      "name": "SURCO",
       "image": "/imagenes_casas/PPAAM02-2025.jpg",
-      "address": "Avda. Los Precursores 642 Dpto. 301, San Miguel",
+      "address": "630 Av. de los Precursores, Santiago de Surco",
       "riskLevel": "moderado",
       "riskScore": 27,
       "evaluationDate": "2025-12-03",
@@ -686,9 +686,9 @@
       "toSerenazgo": "5 min vía Av. Santiago de Surco"
     },
     "PPAAM02-2025": {
-      "toClinic": "12 min vía Av. Benavides",
-      "toPolice": "10 min vía Av. Benavides",
-      "toSerenazgo": "6 min vía Av. Santiago de Surco"
+      "toClinic": "7 min vía Av. Benavides",
+      "toPolice": "9 min vía Av. Tomás Marsano",
+      "toSerenazgo": "5 min vía Av. Santiago de Surco"
     },
     "PPECS03-2025": {
       "toClinic": "18 min vía Av. Benavides",

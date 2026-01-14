@@ -1,7 +1,7 @@
 // Coordenadas exactas verificadas de las residencias
 export const residenceCoordinates: { [key: string]: { coords: [number, number], distrito: string } } = {
   'PPLJF01-2025': { coords: [-12.1133984, -76.9799156], distrito: 'SANTIAGO DE SURCO' },
-  'PPAAM02-2025': { coords: [-12.0694812, -77.0955874], distrito: 'SAN MIGUEL' },
+  'PPAAM02-2025': { coords: [-12.1169345, -76.9811116], distrito: 'SANTIAGO DE SURCO' },
   'PPECS03-2025': { coords: [-12.0876258, -76.9690655], distrito: 'SANTIAGO DE SURCO' },
   'PPLJS04-2025': { coords: [-12.1004511, -77.0387511], distrito: 'SAN ISIDRO' },
   'PPGCO05-2025': { coords: [-12.1003531, -77.0393026], distrito: 'SAN ISIDRO' },
