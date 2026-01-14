@@ -11,10 +11,11 @@ export default function ThemeToggle() {
     return (
       <motion.button
         onClick={toggleTheme}
-        className="relative flex items-center justify-center w-10 h-10 rounded-lg bg-slate-800/50 dark:bg-slate-800/50 light:bg-slate-200 hover:bg-slate-700/50 dark:hover:bg-slate-700/50 light:hover:bg-slate-300 transition-colors"
+        className="relative flex items-center justify-center w-10 h-10 rounded-lg bg-slate-800/50 dark:bg-slate-800/50 light:bg-blue-100 hover:bg-slate-700/50 dark:hover:bg-slate-700/50 light:hover:bg-blue-200 transition-colors"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         aria-label={`Cambiar a modo ${theme === 'dark' ? 'claro' : 'oscuro'}`}
+        title={`Cambiar a modo ${theme === 'dark' ? 'claro' : 'oscuro'}`}
       >
         <motion.div
           initial={{ opacity: 0, rotate: -180 }}
@@ -25,7 +26,7 @@ export default function ThemeToggle() {
           transition={{ duration: 0.3 }}
           className="absolute"
         >
-          <Moon className="w-5 h-5 text-slate-300" />
+          <Moon className="w-5 h-5 text-slate-300 dark:text-slate-300 light:text-blue-600" />
         </motion.div>
         
         <motion.div
@@ -37,7 +38,7 @@ export default function ThemeToggle() {
           transition={{ duration: 0.3 }}
           className="absolute"
         >
-          <Sun className="w-5 h-5 text-yellow-500" />
+          <Sun className="w-5 h-5 text-yellow-500 dark:text-yellow-500 light:text-[#003B7A]" />
         </motion.div>
       </motion.button>
     );
