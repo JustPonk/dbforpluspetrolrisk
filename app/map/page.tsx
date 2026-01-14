@@ -50,8 +50,10 @@ export default function MapaGeneralPage() {
         const createCustomIcon = (riskLevel: string) => {
           const color = 
             riskLevel === 'bajo' ? '#22c55e' : 
+            riskLevel === 'moderado' ? '#3b82f6' :
             riskLevel === 'medio' ? '#eab308' : 
-            '#ef4444';
+            riskLevel === 'alto' ? '#f97316' :
+            '#ef4444'; // extremo
 
           return L.divIcon({
             className: 'custom-marker',
@@ -110,7 +112,9 @@ export default function MapaGeneralPage() {
                   font-weight: bold;
                   text-transform: uppercase;
                   ${residence.riskLevel === 'bajo' ? 'background: #dcfce7; color: #166534;' : 
+                    residence.riskLevel === 'moderado' ? 'background: #dbeafe; color: #1e40af;' :
                     residence.riskLevel === 'medio' ? 'background: #fef9c3; color: #854d0e;' : 
+                    residence.riskLevel === 'alto' ? 'background: #fed7aa; color: #9a3412;' :
                     'background: #fee2e2; color: #991b1b;'}
                 ">
                   ${residence.riskLevel}
@@ -208,8 +212,10 @@ export default function MapaGeneralPage() {
   const stats = {
     total: residencesData.residences.length,
     bajo: residencesData.residences.filter(r => r.riskLevel === 'bajo').length,
+    moderado: residencesData.residences.filter(r => r.riskLevel === 'moderado').length,
     medio: residencesData.residences.filter(r => r.riskLevel === 'medio').length,
     alto: residencesData.residences.filter(r => r.riskLevel === 'alto').length,
+    extremo: residencesData.residences.filter(r => r.riskLevel === 'extremo').length,
   };
 
   return (
@@ -262,6 +268,16 @@ export default function MapaGeneralPage() {
               Bajo ({stats.bajo})
             </button>
             <button
+              onClick={() => setFilterRiskLevel('moderado')}
+              className={`px-3 py-2 rounded-lg font-semibold text-sm transition-all ${
+                filterRiskLevel === 'moderado'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-slate-700 dark:bg-slate-700 light:bg-blue-100 text-slate-300 dark:text-slate-300 light:text-slate-700 hover:bg-blue-500 hover:text-white'
+              }`}
+            >
+              Moderado ({stats.moderado})
+            </button>
+            <button
               onClick={() => setFilterRiskLevel('medio')}
               className={`px-3 py-2 rounded-lg font-semibold text-sm transition-all ${
                 filterRiskLevel === 'medio'
@@ -275,11 +291,21 @@ export default function MapaGeneralPage() {
               onClick={() => setFilterRiskLevel('alto')}
               className={`px-3 py-2 rounded-lg font-semibold text-sm transition-all ${
                 filterRiskLevel === 'alto'
+                  ? 'bg-orange-600 text-white'
+                  : 'bg-slate-700 dark:bg-slate-700 light:bg-blue-100 text-slate-300 dark:text-slate-300 light:text-slate-700 hover:bg-orange-500 hover:text-white'
+              }`}
+            >
+              Alto ({stats.alto})
+            </button>
+            <button
+              onClick={() => setFilterRiskLevel('extremo')}
+              className={`px-3 py-2 rounded-lg font-semibold text-sm transition-all ${
+                filterRiskLevel === 'extremo'
                   ? 'bg-red-600 text-white'
                   : 'bg-slate-700 dark:bg-slate-700 light:bg-blue-100 text-slate-300 dark:text-slate-300 light:text-slate-700 hover:bg-red-500 hover:text-white'
               }`}
             >
-              Alto ({stats.alto})
+              Extremo ({stats.extremo})
             </button>
           </div>
 
@@ -287,15 +313,23 @@ export default function MapaGeneralPage() {
           <div className="flex items-center gap-4 text-xs md:text-sm text-slate-300 dark:text-slate-300 light:text-slate-700">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              <span>Riesgo Bajo</span>
+              <span>Bajo</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+              <span>Moderado</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <span>Riesgo Medio</span>
+              <span>Medio</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-orange-500"></div>
+              <span>Alto</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <span>Riesgo Alto</span>
+              <span>Extremo</span>
             </div>
           </div>
         </div>

@@ -63,13 +63,14 @@ export default function DashboardPage() {
 
   const currentRiskLevel = getCurrentRiskLevel(selectedResidence.riskScore);
 
+  // Calcular chartData dinámicamente basado en la residencia seleccionada
   const chartData = [
-    { name: 'Accesos', value: 75, color: '#22c55e', label: 'ACCESOS' },
-    { name: 'Entorno', value: 60, color: '#3b82f6', label: 'ENTORNO' },
-    { name: 'Iluminación', value: 80, color: '#eab308', label: 'ILUMINACIÓN' },
-    { name: 'Perímetro', value: 70, color: '#f97316', label: 'PERÍMETRO' },
-    { name: 'Medios de Protección', value: 65, color: '#ef4444', label: 'MEDIOS DE PROTECCIÓN' },
-    { name: 'Medios Tecnológicos', value: 55, color: '#8b5cf6', label: 'MEDIOS TECNOLÓGICOS' },
+    { name: 'Accesos', value: selectedResidence.accesos, color: '#22c55e', label: 'ACCESOS' },
+    { name: 'Entorno', value: selectedResidence.entorno, color: '#3b82f6', label: 'ENTORNO' },
+    { name: 'Iluminación', value: selectedResidence.iluminacion, color: '#eab308', label: 'ILUMINACIÓN' },
+    { name: 'Perímetro', value: selectedResidence.perimetro, color: '#f97316', label: 'PERÍMETRO' },
+    { name: 'Medios de Protección', value: selectedResidence.mediosProteccion, color: '#ef4444', label: 'MEDIOS DE PROTECCIÓN' },
+    { name: 'Medios Tecnológicos', value: selectedResidence.mediosTecnologicos, color: '#8b5cf6', label: 'MEDIOS TECNOLÓGICOS' },
   ];
 
   const handleOpenModal = (type: 'donut' | 'speedometer' | 'thermometer') => {
