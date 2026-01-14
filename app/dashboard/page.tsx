@@ -92,6 +92,7 @@ export default function DashboardPage() {
     { id: 'risk' as const, label: 'Dashboard Riesgos', icon: BarChart3 },
     { id: 'routes' as const, label: 'Rutas', icon: Map },
     { id: 'map' as const, label: 'Mapa General', icon: Map, isLink: true, path: '/map' },
+    { id: 'comparativa' as const, label: 'Comparativa', icon: BarChart3, isLink: true, path: '/comparativa' },
     { id: 'search' as const, label: 'Buscar Residencias', icon: Search, isLink: true, path: '/search' },
   ];
 
